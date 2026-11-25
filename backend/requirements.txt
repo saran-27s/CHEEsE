@@ -1,0 +1,8 @@
+# Base runtime (no model runtime). Exact versions are pinned in requirements.lock.txt after install.
+fastapi>=0.115
+uvicorn>=0.30
+python-multipart>=0.0.9
+pydantic>=2.7
+numpy>=1.26
+opencv-python>=4.10
+chess>=1.11

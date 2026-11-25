@@ -1,0 +1,3 @@
+# OPTIONAL. Ultralytics is licensed AGPL-3.0, and the reference weights are AGPL-3.0.
+# Install only if you accept those terms. Pulls in PyTorch (large download).
+ultralytics>=8.3

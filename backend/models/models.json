@@ -1,0 +1,39 @@
+{
+  "_comment": "Model manifest. Weight files are NOT committed. Download with scripts/fetch_reference_weights.py (AGPL-3.0). sha256 values were computed from downloads on 2026-11-24 (HF repo sha c1d115574284b0ca3a1c55dcea51e6baa456ebd0); file sizes 121113130 + 58920942 bytes match the HF API usedStorage of 180034072.",
+  "models": [
+    {
+      "id": "surawut-yolo11m-pieces",
+      "task": "piece_detector",
+      "file": "yolo11m_pieces.pt",
+      "runtime": "ultralytics",
+      "input": "warped_board",
+      "imgsz": 640,
+      "conf": 0.25,
+      "has_hand_class": true,
+      "class_map": {
+        "Hand": "hand",
+        "wP": "P", "wN": "N", "wB": "B", "wR": "R", "wQ": "Q", "wK": "K",
+        "bP": "p", "bN": "n", "bB": "b", "bR": "r", "bQ": "q", "bK": "k"
+      },
+      "anchor": {"mode": "toward_camera", "fx": 0.5, "fy": 0.5, "strength": 0.5},
+      "license": "AGPL-3.0 (model card); fine-tuned from Ultralytics YOLO11",
+      "source_url": "https://huggingface.co/surawut/chess-move-tracking-yolo11/resolve/main/models/yolo11m_pieces.pt",
+      "sha256": "e7467e5e6b7e0ec05e6987c74b8836a7a3c98ff9bdead071a2d0d9867cba4125",
+      "notes": "Trained on warped 640x640 top-down boards with a8 at top-left. Accuracy on other boards/cameras is unknown."
+    },
+    {
+      "id": "surawut-yolo11s-pose-corners",
+      "task": "board_corners",
+      "file": "yolo11s_pose_chessboard.pt",
+      "runtime": "ultralytics",
+      "input": "raw_image",
+      "imgsz": 640,
+      "conf": 0.5,
+      "keypoint_order": ["a1", "h1", "a8", "h8"],
+      "license": "AGPL-3.0 (model card); fine-tuned from Ultralytics YOLO11",
+      "source_url": "https://huggingface.co/surawut/chess-move-tracking-yolo11/resolve/main/models/yolo11s_pose_chessboard.pt",
+      "sha256": "a847530a214b8ba4e76bd2581d0873297db420fd6f14ec0431bc0cbba3a0e15d",
+      "notes": "Used only to pre-fill corner suggestions; the user always confirms calibration."
+    }
+  ]
+}
